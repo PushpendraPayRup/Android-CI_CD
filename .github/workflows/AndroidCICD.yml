@@ -18,15 +18,6 @@ jobs:
         with:
           java-version: '1.8'
 
-      - name: Set up Android SDK
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'sdk'
-          java-version: '1.8'
-          server-id: github
-          server-username: ${{ secrets.GITHUB_USERNAME }}
-          server-password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Make gradlew executable
         run: chmod +x gradlew
 
