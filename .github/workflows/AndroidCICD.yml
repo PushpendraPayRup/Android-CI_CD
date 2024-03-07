@@ -3,7 +3,7 @@ name: android-build-and-test
 on:
   push:
     branches:
-      - main
+    - master
 
 jobs:
   build-and-test:
