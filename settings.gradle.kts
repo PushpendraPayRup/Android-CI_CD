@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidCICD"
 include(":app")
- 
+include(":my_sdk")
