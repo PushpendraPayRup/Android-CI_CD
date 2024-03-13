@@ -16,21 +16,5 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         onCreateActivity()
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
 
 }
