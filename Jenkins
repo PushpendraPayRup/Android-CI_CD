@@ -13,22 +13,20 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    // Ensure Gradle wrapper exists and is executable
-                    sh 'chmod +x gradlew'
-                    sh './gradlew clean'
-                    sh './gradlew assembleRelease'
-                    // Checkout your source code from your version control system (e.g., Git)
-                    git url: 'https://github.com/PushpendraPayRup/Android-CI_CD.git'
-                }
-            }
+                            script {
+                                // Ensure Gradle wrapper exists and is executable
+                                sh 'chmod +x gradlew'
+                                // Checkout your source code from your version control system (e.g., Git)
+                                git url: 'https://github.com/PushpendraPayRup/Android-CI_CD.git'
+                            }
+                        }
         }
         stage('Build') {
             steps {
                 script {
-                    chmod +x gradlew
-                    sh ./gradlew clean
-                    sh ./gradlew assembleRelease
+                    sh 'chmod +x gradlew'
+                    sh './gradlew clean'
+                    sh './gradlew assembleRelease'
                 }
             }
         }
