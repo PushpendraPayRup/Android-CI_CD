@@ -16,6 +16,8 @@ pipeline {
                 script {
                     // Ensure Gradle wrapper exists and is executable
                     sh 'chmod +x gradlew'
+                    sh './gradlew clean'
+                    sh './gradlew assembleRelease'
                     // Checkout your source code from your version control system (e.g., Git)
                     git url: 'https://github.com/PushpendraPayRup/Android-CI_CD.git'
                 }
