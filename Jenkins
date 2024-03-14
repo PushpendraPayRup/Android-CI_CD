@@ -28,14 +28,23 @@ pipeline {
                 }
             }
         }
-        stage('Archive APK') {
-            steps {
-                script {
-                    // Archive the generated APK file
-                    archiveArtifacts artifacts: '**/*.apk', fingerprint: true
-                }
-            }
-        }
+        stage('Artifact') {
+  steps {
+   script {
+     sh "mkdir -p ${env.WORKSPACE}/builds"
+            
+     sh "cp app/build/outputs/apk/*/*/*.apk ${env.WORKSPACE}/builds"
+
+     sh "cd ${env.WORKSPACE}/builds"
+
+     zip zipFile: 'apks.zip', archive: false, dir: 
+     "${env.WORKSPACE}/builds"
+            
+     archiveArtifacts artifacts: '${env.WORKSPACE}/builds, apks.zip', 
+      onlyIfSuccessful: true
+   }
+  }
+}       
     }
     post {
         always {
