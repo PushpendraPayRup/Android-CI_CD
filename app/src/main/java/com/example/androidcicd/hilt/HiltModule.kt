@@ -1,8 +1,6 @@
 package com.example.androidcicd.hilt
 
 import com.example.androidcicd.network.ApiInterface
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,13 +11,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 class HiltModule {
-
     @Provides
-    fun providesGson() : GsonConverterFactory {
+    fun providesGson(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }
+
     @Provides
-    fun providesRetrofit(gsonConverterFactory: GsonConverterFactory) : Retrofit {
+    fun providesRetrofit(gsonConverterFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
             .baseUrl("url")
             .addConverterFactory(gsonConverterFactory)

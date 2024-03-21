@@ -1,8 +1,11 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
 }
 
 android {
@@ -20,6 +23,7 @@ android {
     }
 
     buildTypes {
+
         release {
             isMinifyEnabled = true
             isDebuggable = false
@@ -41,6 +45,20 @@ android {
         dataBinding = true
         viewBinding = true
     }
+}
+
+ktlint {
+    android = true
+    ignoreFailures = false
+    reporters {
+        reporter(ReporterType.PLAIN)
+        reporter(ReporterType.CHECKSTYLE)
+        reporter(ReporterType.SARIF)
+    }
+}
+
+tasks.ktlintKotlinScriptCheck {
+    dependsOn(tasks.ktlintKotlinScriptFormat)
 }
 
 dependencies {

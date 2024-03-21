@@ -9,13 +9,15 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     abstract fun onCreateFragment()
-    abstract var binding : T
+
+    abstract var binding: T
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       onCreateFragment()
+        onCreateFragment()
         return binding.root
     }
 }

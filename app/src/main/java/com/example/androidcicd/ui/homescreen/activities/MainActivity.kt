@@ -9,7 +9,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-
     private lateinit var navController: NavController
     private lateinit var navHost: NavHostFragment
     override var binding: ActivityMainBinding
