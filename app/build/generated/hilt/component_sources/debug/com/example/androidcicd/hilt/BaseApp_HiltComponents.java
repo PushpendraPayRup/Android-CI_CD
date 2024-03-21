@@ -1,8 +1,8 @@
 package com.example.androidcicd.hilt;
 
-import com.example.androidcicd.HomeFragment_GeneratedInjector;
-import com.example.androidcicd.HomeViewModel_HiltModules;
-import com.example.androidcicd.ui.MainActivity_GeneratedInjector;
+import com.example.androidcicd.ui.homescreen.activities.MainActivity_GeneratedInjector;
+import com.example.androidcicd.ui.homescreen.fragments.HomeFragment_GeneratedInjector;
+import com.example.androidcicd.ui.homescreen.viewmodels.HomeViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;

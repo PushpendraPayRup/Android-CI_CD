@@ -6,10 +6,10 @@ import android.view.View;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
-import com.example.androidcicd.HomeFragment;
-import com.example.androidcicd.HomeViewModel;
-import com.example.androidcicd.HomeViewModel_HiltModules_KeyModule_ProvideFactory;
-import com.example.androidcicd.ui.MainActivity;
+import com.example.androidcicd.ui.homescreen.activities.MainActivity;
+import com.example.androidcicd.ui.homescreen.fragments.HomeFragment;
+import com.example.androidcicd.ui.homescreen.viewmodels.HomeViewModel;
+import com.example.androidcicd.ui.homescreen.viewmodels.HomeViewModel_HiltModules_KeyModule_ProvideFactory;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.ViewModelLifecycle;
 import dagger.hilt.android.flags.HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
@@ -428,7 +428,7 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
 
     @Override
     public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
-      return Collections.<String, Provider<ViewModel>>singletonMap("com.example.androidcicd.HomeViewModel", ((Provider) homeViewModelProvider));
+      return Collections.<String, Provider<ViewModel>>singletonMap("com.example.androidcicd.ui.homescreen.viewmodels.HomeViewModel", ((Provider) homeViewModelProvider));
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
@@ -452,7 +452,7 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
       @Override
       public T get() {
         switch (id) {
-          case 0: // com.example.androidcicd.HomeViewModel 
+          case 0: // com.example.androidcicd.ui.homescreen.viewmodels.HomeViewModel 
           return (T) new HomeViewModel();
 
           default: throw new AssertionError(id);
@@ -538,7 +538,7 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
     }
 
     @Override
-    public void injectBaseApp(BaseApp arg0) {
+    public void injectBaseApp(BaseApp baseApp) {
     }
 
     @Override

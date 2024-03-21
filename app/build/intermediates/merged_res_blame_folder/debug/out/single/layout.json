@@ -4,6 +4,14 @@
         "source": "com.example.androidcicd.app-main-54:/layout/activity_main.xml"
     },
     {
+        "merged": "/Users/admin/.gradle/daemon/8.2/com.example.androidcicd.app-mergeDebugResources-51:/layout/fragment_home.xml",
+        "source": "/Users/admin/.gradle/daemon/8.2/com.example.androidcicd.app-main-54:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/admin/.gradle/daemon/8.2/com.example.androidcicd.app-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "/Users/admin/.gradle/daemon/8.2/com.example.androidcicd.app-main-54:/layout/activity_main.xml"
+    },
+    {
         "merged": "com.example.androidcicd.app-mergeDebugResources-51:/layout/fragment_home.xml",
         "source": "com.example.androidcicd.app-main-54:/layout/fragment_home.xml"
     }
